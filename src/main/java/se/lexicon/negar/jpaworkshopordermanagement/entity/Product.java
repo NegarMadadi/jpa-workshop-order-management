@@ -1,13 +1,19 @@
 package se.lexicon.negar.jpaworkshopordermanagement.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
-
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String name;
-    // create as big decimal
     private double price;
+    private String id;
 
     public Product() {
     }
@@ -62,4 +68,9 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

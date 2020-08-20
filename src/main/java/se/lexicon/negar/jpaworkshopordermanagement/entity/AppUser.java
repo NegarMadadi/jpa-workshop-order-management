@@ -1,9 +1,16 @@
 package se.lexicon.negar.jpaworkshopordermanagement.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
-public class AppUser {
+@Entity
 
+public class AppUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
@@ -13,9 +20,9 @@ public class AppUser {
     }
 
     public AppUser(String firstName, String lastName, String email) {
-       setFirstName(firstName);
-       setLastName(lastName);
-       setEmail(email);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     public int getId() {
